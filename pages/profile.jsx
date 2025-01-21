@@ -461,9 +461,10 @@ const [isLoggedIn, setisLoggedIn] = useState(typeof loggedUserId !== undefined ?
             const key_1=parseInt(key1)
             const key_2=parseInt(key2)
             const price = parseInt(price1)
+            const prodCount=typeof window !== 'undefined' ? localStorage.getItem(`${key_1}_${key_2}`) : null 
          if( typeof window !== undefined) {
-           if( localStorage.getItem(`${key_1}_${key_2}`)){
-            productCount=localStorage.getItem(`${key_1}_${key_2}`);
+           if( prodCount){
+            productCount=prodCount;
            }
          }
            return(
