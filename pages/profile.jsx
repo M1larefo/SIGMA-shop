@@ -447,7 +447,8 @@ const [isLoggedIn, setisLoggedIn] = useState(typeof loggedUserId !== undefined ?
           }
           for(let j =0; j < 25;j++){
              for(let i=0; i < 98; i++){
-              if(localStorage.getItem(`${i}_${j+1}`) > 0){
+              const ProdQuantity=typeof window !== 'undefined' ? localStorage.getItem(`${i}_${j+1}`) : null
+              if( ProdQuantity > 0){
                 totalProductsQuantity[j] =totalProductsQuantity[j] + 1;
               }
             }
