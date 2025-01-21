@@ -6,6 +6,34 @@ import Link from 'next/link';
 
 
 export default function CartPage(){
+   function useSiteState(){
+   
+      const[ BlockDisplay, setBlockDisplay] = useState(true);
+      const[BurgerDisplay, setBurgerDisplay] = useState(true);
+       
+      const [themeChanger,setthemeChanger] = useState(`left-[52.2%]`)
+    
+     //window resize
+         const [width, setWidth] = useState(0)
+         const [height, setHeight] = useState(0)
+         
+     const isWide=(width >= 1050) ? true : false
+    
+     return{
+      BlockDisplay,
+      setBlockDisplay,
+      BurgerDisplay,
+      setBurgerDisplay,
+      width,
+      setWidth,
+      height,
+      setHeight,
+      isWide, 
+      themeChanger,
+      setthemeChanger,
+     }
+    }
+    
   function Header(){
     const {
      BlockDisplay,
@@ -190,23 +218,24 @@ function Footer(){
     )
 }
 const UserId = typeof window !== 'undefined' ? localStorage.getItem("loggedInUserId") : null
-  let isLoggedIn= UserId ? true : false;
+  const isLoggedIn= UserId ? true : false;
  
   
   let Counter=0;
   let isThemeCh;
- 
+ const localTheme=typeof window !== 'undefined' ? localStorage.getItem('theme') : null
   const Copy256A_ArrayOfCounters=Array(98).fill(0);
   
   if(typeof window !== undefined){
     
     for(let i=0; i < 98; i++){
-      if(localStorage.getItem(`${i}`)){
-   Copy256A_ArrayOfCounters[i]=parseInt(localStorage.getItem(`${i}`))
+      const CounterValue=typeof window !== 'undefined' ? localStorage.getItem(`${i}`) : null
+      if(CounterValue){
+   Copy256A_ArrayOfCounters[i]=parseInt(CounterValue)
       }
   }
-  if(localStorage.getItem('theme')){
-     Counter=parseInt(localStorage.getItem('theme'))
+  if(localTheme){
+     Counter=parseInt(localTheme)
      if(Counter % 2 === 0){
       isThemeCh=true;
      }else{
@@ -244,9 +273,10 @@ let sumCounter=0;
 CopyproductsPrice.forEach((num) => sumCounter+=num)
 const [totalCounter, settotalCounter]=useState(sumCounter)
   let OrderNumber;
+  const localNumber=typeof window !== 'undefined' ? localStorage.getItem('OrderNumber') : null
 if(typeof window !== undefined){
-  if(localStorage.getItem('OrderNumber')){
-     OrderNumber=parseInt(localStorage.getItem('OrderNumber')) + 1;
+  if(localNumber){
+     OrderNumber=parseInt(localNumber) + 1;
   }else if((OrderNumber === undefined || OrderNumber === null)){
      OrderNumber=1;
   }
