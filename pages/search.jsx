@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState, useEffect, useRef } from 'react';
 
+import Link from 'next/link';
 
-import { Link, animateScroll as scroll } from "react-scroll";
 
 
 
