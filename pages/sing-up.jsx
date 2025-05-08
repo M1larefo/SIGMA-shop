@@ -391,8 +391,11 @@ export default function SingUpPage() {
 
   return (
     <>
+    <div className="h-full min-h-[1000px]  m-0 p-0 overflow-x-hidden">
+      <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
       <title>SIGMA electricity shop</title>
-      <div className="w-12/12 h-full ">
+      <div className="w-12/12 h-full  m-0 p-0 overflow-x-hidden">
         <Header />
         <button className={`${isThemeChanged ? 'bg-gray-700' : 'bg-zinc-200'} z-50 w-[4%] h-[30px] fixed top-[13px] outline-none rounded-xl ${isWide ? 'min-w-14' : 'min-w-[58px]'} ${isWide ? 'left-[52%]' : 'left-[61%]'}`} suppressHydrationWarning={true} onClick={themeChange}></button>
         <button className={` ${isThemeChanged ? 'bg-zinc-200' : 'bg-black'} z-50 w-[1.4%] h-[25px] fixed top-[15px]  rounded-[50px] ${themeChanger} min-w-6`} suppressHydrationWarning={true} onClick={themeChange}></button>
@@ -419,6 +422,7 @@ export default function SingUpPage() {
         </div>
       </div>
       <Footer />
+      </div>
     </>
   )
 }
