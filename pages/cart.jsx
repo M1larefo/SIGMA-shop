@@ -594,14 +594,16 @@ export default function CartPage() {
 
   return (
     < >
+    <div className="h-full min-h-[1000px]  m-0 p-0 overflow-x-hidden">
       <meta charSet="utf-8" />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
       <title>SIGMA electricity shop</title>
       <link rel="icon" href="/favicon.ico" sizes="any" />
       <link rel="canonical" href="https://play-lh.googleusercontent.com/ZRwzMtXLgV5DaK_ExooQTxfXgg3UeK_e9xWmOjSUq6kyedjHk2NMk1zNRRdwqgCI8Kk=w240-h480-rw" />
       <Header isThemeChanged={!isThemeChanged} />
       <button className={`${isThemeChanged ? 'bg-gray-700' : 'bg-zinc-200'} z-50 w-[4%] h-[30px] fixed top-[13px] outline-none rounded-xl ${isWide ? 'min-w-14' : 'min-w-[58px]'} ${isWide ? 'left-[52%]' : 'left-[61%]'}`} suppressHydrationWarning={true} onClick={themeChange}></button>
       <button className={` ${isThemeChanged ? 'bg-zinc-200' : 'bg-black'} z-50 w-[1.4%] h-[25px] fixed top-[15px]  rounded-[50px] ${themeChanger} min-w-6`} suppressHydrationWarning={true} onClick={themeChange}></button>
-      <div className={`${isThemeChanged ? 'bg-gray-900' : 'bg-gray-300'} h-full min-h-[710px] ${width <= 500 ? "w-[120%] "  : "w-12/12 " } bg-no-repeat bg-cover scroll-smooth flex flex-col items-center `}>
+      <div className={`${isThemeChanged ? 'bg-gray-900' : 'bg-gray-300'}  m-0 p-0 overflow-x-hidden h-full min-h-[710px] ${width <= 0 ? "w-[120%] "  : "w-12/12 " } bg-no-repeat bg-cover scroll-smooth flex flex-col items-center `}>
         <p className={`${width > 1000 ? 'text-5xl' : 'text-4xl'} ${isThemeChanged ? 'text-slate-100' : 'text-gray-900'} font-bold font-sans italic relative ${width > 800 ? 'right-[40%]' : 'right-[31%]'} top-[20px] ${isLoggedIn ? 'block' : 'hidden'} ${totalCounter > 0 ? 'block' : 'hidden'} ${isOrdered ? 'hidden' : 'block'} `}>TOTAL:{totalCounter}$</p>
         <button className={` relative bottom-[20px]   ${totalCounter > 0 ? 'block ' : 'hidden'} ${width > 550 ? 'text-xl' : 'text-lg'} ${width > 630 ? 'left-[15%]' : 'left-[25%]'} font-serif font-extrabold ${width > 550 ? 'w-[155px]' : 'w-[100px]'}  ${isLoggedIn ? 'block' : 'hidden'} ${isThemeChanged ? 'bg-gray-900' : 'bg-gray-100'} h-[50px] border-[3px] border-red-500 rounded-xl text-red-500 ${isOrdered ? 'hidden' : 'block'}`} onClick={() => deleteAllCounter()} >Delete All</button>
         <Link href="/"><div className={`absolute  ${width > 730 ? 'right-[7%]' : 'right-[3%]'} ${width > 730 ? 'text-4xl' : 'text-2xl'} text-blue-800 ${width > 1000 ? 'top-[90px]' : 'top-[80px]'} ${width > 630 ? 'block' : 'hidden'} hover:border-[2px] ${isLoggedIn ? 'block' : 'hidden'} border-b-blue-800 hover:border-l-0 hover:border-t-0 hover:border-r-0  ${totalCounter > 0 ? 'block' : 'hidden'}  hover:rounded-md ${width > 730 ? 'w-[100px]' : 'w-[70px]'}`}>Home</div> </Link>
@@ -718,6 +720,7 @@ export default function CartPage() {
         <p className={`relative top-[60px] ${width > 750 ? 'left-[5%]' : 'left-[15%]'} text-4xl text-blue-800 hover:border-[2px] ${isLoggedIn ? 'block' : 'hidden'} border-b-blue-800 hover:border-l-0 hover:border-t-0 hover:border-r-0  hover:rounded-md  ${isOrdered ? 'block' : 'hidden'}`}><Link href='/profile'>History</Link></p>
       </div>
       <Footer />
+      </div>
     </>
   )
 }
