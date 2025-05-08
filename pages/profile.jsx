@@ -609,7 +609,9 @@ export default function ProfilePage() {
 
   return (
     < >
+     <div className="h-full min-h-[1000px]  m-0 p-0 overflow-x-hidden">
       <meta charSet="utf-8" />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
       <title>SIGMA electricity shop</title>
       <link rel="icon" href="/favicon.ico" sizes="any" />
       <link rel="canonical" href="https://play-lh.googleusercontent.com/ZRwzMtXLgV5DaK_ExooQTxfXgg3UeK_e9xWmOjSUq6kyedjHk2NMk1zNRRdwqgCI8Kk=w240-h480-rw" />
@@ -617,7 +619,7 @@ export default function ProfilePage() {
       <button className={`${isThemeChanged ? 'bg-gray-700' : 'bg-zinc-200'} z-50 w-[4%] h-[30px] fixed top-[13px] outline-none rounded-xl ${isWide ? 'min-w-14' : 'min-w-[58px]'} ${isWide ? 'left-[52%]' : 'left-[61%]'}`} suppressHydrationWarning={true} onClick={themeChange}></button>
       <button className={` ${isThemeChanged ? 'bg-zinc-200' : 'bg-black'} z-50 w-[1.4%] h-[25px] fixed top-[15px]  rounded-[50px] ${themeChanger} min-w-6`} suppressHydrationWarning={true} onClick={themeChange}></button>
 
-      <div className={`${isThemeChanged ? 'bg-gray-900' : 'bg-gray-300'} ${width <= 500 ? "w-[120%] h-[120%]"  : "" } min-h-[910px] bg-no-repeat bg-cover scroll-smooth flex flex-col `}>
+      <div className={`${isThemeChanged ? 'bg-gray-900' : 'bg-gray-300'} ${width <= 0 ? "w-[120%] h-[120%]"  : "" } min-h-[910px]  m-0 p-0 overflow-x-hidden bg-no-repeat bg-cover scroll-smooth flex flex-col `}>
         <p className={` ${isThemeChanged ? 'text-slate-100' : 'text-gray-900'} ${width > 750 ? 'text-7xl' : 'text-5xl'} font-bold font-serif italic relative ${width > 1580 ? 'left-72' : 'left-2'} top-[60px] ${isLoggedIn2 ? 'hidden' : 'block'}  `}>You don't logged in your account.</p>
         <Link href="/sing-up"><div className={`${width > 1400 ? 'block' : 'hidden'} ${width > 750 ? 'text-5xl' : 'text-3xl'} ${width > 750 ? 'relative left-[32%] top-[77px]' : 'relative right-[100%] top-[78px]'} text-blue-600 hover:border-[2px] border-b-blue-600 ${isLoggedIn2 ? 'hidden' : 'block'} hover:border-l-0 hover:border-t-0 hover:border-r-0  hover:rounded-md ${width > 750 ? 'w-[165px]' : 'w-[96px]'} `}>Sing up</div> </Link>
         <p className={`${width > 1400 ? 'block' : 'hidden'} ${isThemeChanged ? 'text-slate-100' : 'text-gray-900'} ${width > 750 ? 'relative top-[28px] left-[44%]' : 'relative right-[3.1%] top-[43px]'} ${width > 750 ? 'text-5xl' : 'text-3xl'} font-bold font-sans italic relative top-[30px] right-[62px] ${isLoggedIn2 ? 'hidden' : 'block'}  `}>or</p>
@@ -650,6 +652,7 @@ export default function ProfilePage() {
       </div>
       <div className=" bg-slate-800 w-12/12 h-[130px]  ">
         <div className='relative top-[40px] left-[60px] text-4xl text-slate-100 font-sans font-semibold'>© SIGMA electicity company</div>
+      </div>
       </div>
     </>
   )
